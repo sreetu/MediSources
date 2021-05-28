@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    return render(request,'t&c.html')
+
+
+def cform(request):
+    return render(request, 'consumer_form.html')
