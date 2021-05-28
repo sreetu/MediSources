@@ -5,3 +5,9 @@ from django.shortcuts import render
 
 def cform(request):
     return render(request, 'consumer_form.html')
+
+
+
+def consumer_data(request):
+    return render(request, 'consumer_data.html')
+
