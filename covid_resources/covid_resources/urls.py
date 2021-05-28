@@ -24,3 +24,4 @@ urlpatterns = [
     path('provider/', include('provider.urls')),
     path('admin/', admin.site.urls),
 ]
+              # + static(settings.STATIC_URL,)
