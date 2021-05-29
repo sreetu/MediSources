@@ -4,7 +4,9 @@
 
 {% block bodyblock %}
     
-
+{% if messages %}
+    {{ message }}
+{% endif %}
     
 <div class="jumbotron text-center">
 <a href="#" type="button" class="btn btn-primary">Provider</a>

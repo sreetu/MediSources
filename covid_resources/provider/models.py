@@ -1,10 +1,13 @@
+from typing import Optional
 from django.db import models
+
 
 # Create your models here.
 class Provider(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10)
-    email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    city = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=200)
     pincode = models.IntegerField(null=True)
     deliver = models.BooleanField(default=True)
