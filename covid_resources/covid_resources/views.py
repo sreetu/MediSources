@@ -18,9 +18,3 @@ def tnc(request):
 
 def contact(request):
     return render(request, 'contact.html')
-
-def login(request):
-    return render(request, 'login.html')
-
-def signin(request):
-    return render(request, 'signin.html')

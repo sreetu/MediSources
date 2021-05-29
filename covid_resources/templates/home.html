@@ -4,9 +4,13 @@
 
 {% block bodyblock %}
 
-<div class="jumbotron text-center">
-<a href="{% url 'login' %}" type="button" class="btn btn-primary">Provider</a>
-<a href="{% url 'login' %}" type="button" class="btn btn-primary">Consumer</a>
+<div class="jumbotron text-center row">
+  <div class="col-6">
+<a href="{% url 'consumer:cindex' %}" type="button" class="btn btn-primary btn-lg">Consumer</a>
+</div>
+<div class="col-6">
+<a href="{% url 'provider:pindex' %}" type="button" class="btn btn-primary btn-lg">Provider</a>
+</div>
 </div>
 
 {% endblock bodyblock %}
