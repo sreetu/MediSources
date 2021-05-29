@@ -1,20 +1,27 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Consumer, Request
+
 # Create your views here.
 
 
 def cindex(request):
-    return render(request, 'consumer\cindex.html')
+    if request.method== 'POST':
+        name = request.POST['username']
+        dob = request.POST['dob']
+        consumer = Consumer.objects.filter(phone=name,dob=dob)
+        if consumer:
+            requests=Request.objects.filter(consumer_id=consumer[0].pk)
+            # request.session['requests']=requests
+            # request.session['user'] = consumer[0]
+            print(requests)
+            return render(request, 'consumer\consumer_data.html', {'consumer': consumer[0],'requests': requests})
+        else:
+            return render(request, 'consumer\cindex.html', {'messages': 'Invalid User Details'})
+    else:
+        return render(request, 'consumer\cindex.html')
 
-def login(request):
-    name = request.POST['name']
-    dob = request.POST['dob']
-    consumer = Consumer.objects.get(name=name, dob=dob)
-    if consumer:
-        return render(request, 'home.html', {'messages': 'Login Successful'})
-    else: 
-        return render(request, 'home.html', {'messages': 'Invalid User Details'})
+    
 
 def cform(request):
     if request.method == 'POST':
