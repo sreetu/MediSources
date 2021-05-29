@@ -7,4 +7,5 @@ urlpatterns = [
     path('pindex/',views.pindex,name='pindex'),
     path('pform/', views.pform, name='pform'),
     path('pdata/', views.pdata, name='pdata'),
+    path('ptable/', views.ptable, name='ptable'),
 ]
