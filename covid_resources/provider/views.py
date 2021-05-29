@@ -6,5 +6,5 @@ from django.shortcuts import render
 def pform(request):
     return render(request, 'provider_form.html')
 
-def provider_data(request):
+def pdata(request):
     return render(request, 'provider_data.html')
