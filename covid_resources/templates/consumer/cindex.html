@@ -3,10 +3,14 @@
 
 {% block bodyblock %}
 
+<<<<<<< HEAD
 <div class="box1">
     {% if messages %}
     <p style="color:white">{{ messages }}</p>
     {% endif %}
+=======
+<div class="box1" style="background:pink">
+>>>>>>> 6c42dcbea22f5768e84ff89a2d9d9d2ef128b474
     <h2>Login</h2>
     <form action="" method="POST">
         {% csrf_token %}
@@ -19,7 +23,11 @@
             <input type="date" name="dob" placeholder="dd-mm-yyyy" required="">
         </div>
         <input type="submit" value="Submit" href="#"><br><br>
+<<<<<<< HEAD
         <p style="color:white"><em>New User? Click <a href="{% url 'consumer:cform' %}" class="btn-outline-success">here</a></em></p>
+=======
+        <p style="color:white"><em>New User? <a class="btn btn-dark" href="{% url 'consumer:cform' %}">Click here</a></em></p>
+>>>>>>> 6c42dcbea22f5768e84ff89a2d9d9d2ef128b474
     </form>
 </div>
 
