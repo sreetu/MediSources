@@ -3,7 +3,12 @@
 
 {% block bodyblock %}
 
+Name:{{consumer.name}}
+Contact Number:{{consumer.phone}}
+Address:{{consumer.city}}
+Condition:{{consumer.severity}}
 <div class="grid">
+  {%  for i in requests %}
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
@@ -23,7 +28,12 @@
         </div>
       </div>
     </div>
+    {% if i.completed %}
+    <div class="col-sm-6">{{i.completed}}</div>
+    {% else %}
+    <div class="col-sm-6">Pending</div>
   </div>
+  {% endfor %}
 </div>
 <br>
 <div class="box" align="center">
