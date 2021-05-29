@@ -22,4 +22,4 @@ class Resource(models.Model):
     count = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.provider.name + " " + self.type
+        return self.provider.name + " " + self.provider.phone + " " + self.type

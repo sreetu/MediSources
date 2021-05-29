@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Consumer, Request
 # Create your views here.
 
@@ -35,12 +35,11 @@ def cform(request):
         else:
             consumer.severity = "critical"
         consumer.save()
-        return render(request, 'home.html')
+        return render(request, 'consumer\consumer_form.html')
     else:
         return render(request, 'consumer\consumer_form.html')
 
 def cdata(request):
-<<<<<<< HEAD
     requests = Request.objects.all()
     return render(request, 'consumer\consumer_data.html', {'requests': requests})
 
@@ -52,8 +51,3 @@ def createrequest(request):
         return HttpResponse('success')
     else:
         return HttpResponse('error')
-
-
-=======
-    return render(request, 'consumer\consumer_data.html')
->>>>>>> 08434a96f6d312d327bdab17b88856688fdc60b4

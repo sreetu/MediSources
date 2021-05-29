@@ -35,12 +35,8 @@ def pform(request):
         return render(request, 'provider\provider_form.html')
 
 def pdata(request):
-<<<<<<< HEAD
     providers = Provider.objects.all()
     dict = {}
     for provider in providers:
         dict[provider.name] = Resource.objects.filter(provider_id=provider.pk)
     return render(request, 'provider\provider_data.html', {'providers': providers, 'dict': dict})
-=======
-    return render(request, 'provider\provider_data.html')
->>>>>>> 08434a96f6d312d327bdab17b88856688fdc60b4
