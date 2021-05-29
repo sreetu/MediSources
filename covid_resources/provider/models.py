@@ -6,14 +6,20 @@ class Provider(models.Model):
     phone = models.CharField(max_length=10)
     email = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
-    startingTime = models.CharField(max_length=10)
-    endingTime = models.CharField(max_length=10)
-    homeDelivery = models.BooleanField(default=True)
-    callDuration = models.CharField(max_length=10)
-    available = models.BooleanField(default=True)
-    bed = models.IntegerField(default=0)
-    oxygenCylinder = models.IntegerField(default=0)
-    oxygenCylinderToolkit = models.IntegerField(default=0)
-    homeIsolationKit = models.IntegerField(default=0)
+    pincode = models.IntegerField(null=True)
+    deliver = models.BooleanField(default=True)
+    dob = models.DateField()
 
+    def __str__(self):
+        return self.name
+
+class Resource(models.Model):
+    name = models.CharField(max_length=100)
+    type = models.CharField(max_length=100,default=None,null=True,blank=True)
+
+    def __str__(self):
+        if self.type:
+            return self.name+" "+self.type
+        else:
+            return self.name
 
