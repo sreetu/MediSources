@@ -23,6 +23,15 @@ def cindex(request):
 
     
 
+def login(request):
+    name = request.POST['name']
+    dob = request.POST['dob']
+    consumer = Consumer.objects.get(name=name, dob=dob)
+    if consumer:
+        return render(request, 'home.html', {'messages': 'Login Successful'})
+    else: 
+        return render(request, 'home.html', {'messages': 'Invalid User Details'})
+
 def cform(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -49,6 +58,16 @@ def cform(request):
 def cdata(request):
     requests = Request.objects.all()
     return render(request, 'consumer\consumer_data.html', {'requests': requests})
+
+def createrequest(request):
+    if request.method == 'POST':
+        consumer = Consumer.objects.get(pk=request.user.id)
+        type = request.POST['type']
+        count = request.POST['count']
+        return HttpResponse('success')
+    else:
+        return HttpResponse('error')
+
 
 def createrequest(request):
     if request.method == 'POST':
