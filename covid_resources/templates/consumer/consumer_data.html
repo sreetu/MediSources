@@ -3,13 +3,11 @@
 
 {% block bodyblock %}
 
-Consumer Name:{{consumer.name}}
-<br>
-Consumer Contact:{{consumer.phone}}
-<br>
-Consumer Contact:{{consumer.city}}
-<br>Consumer Contact:{{consumer.severity}}
-<br>
+Consumer Name:{{consumer.name}}<br>
+Consumer Contact:{{consumer.phone}}<br>
+Consumer Contact:{{consumer.city}}<br>
+Consumer Contact:{{consumer.severity}}<br>
+
 <table class="table-primary">
     {% for i in requests %}
     <tr class="table-primary">

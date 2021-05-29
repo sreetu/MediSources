@@ -15,6 +15,15 @@ def login(request):
     else: 
         return render(request, 'home.html', {'messages': 'Invalid User Details'})
 
+def login(request):
+    name = request.POST['name']
+    dob = request.POST['dob']
+    provider = Provider.objects.get(name=name, dob=dob)
+    if provider:
+        return render(request, 'home.html', {'messages': 'Login Successful'})
+    else: 
+        return render(request, 'home.html', {'messages': 'Invalid User Details'})
+
 def pform(request):
     if request.method == 'POST':
         name = request.POST['name']
