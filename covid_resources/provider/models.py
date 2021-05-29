@@ -14,7 +14,7 @@ class Provider(models.Model):
     dob = models.DateField()
 
     def __str__(self):
-        return self.name
+        return self.phone
 
 class Resource(models.Model):
     provider = models.ForeignKey('Provider', on_delete=models.CASCADE, null=True, blank=True)

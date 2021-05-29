@@ -82,6 +82,11 @@ input[type=text], select, textarea {
   color: white;
 }
 
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
 /* login */
 .box1{
     position: relative;

@@ -15,6 +15,11 @@ def login(request):
     else: 
         return render(request, 'home.html', {'messages': 'Invalid User Details'})
 
+
+def ptable(request):
+    resources = Resource.objects.all()
+    return render(request, 'provider\provider_table.html', {'resources': resources})
+
 def pform(request):
     if request.method == 'POST':
         name = request.POST['name']

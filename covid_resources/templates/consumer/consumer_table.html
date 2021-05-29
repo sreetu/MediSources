@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table></table>
+    {% for i in requests %}
+        <tr>
+            <th>Reciever's Contact</th>
+            <th>Resources</th>
+            <th>Number of Resources</th>
+            <th>Date of Complition</th>
+        </tr>
+        <tr>
+            <td>{{i.consumer}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.count}}</td>
+            {% if i.completed %}
+                <td class="table-primary">{{i.completed}}</td>
+            {% else %}
+                <td class="table-primary">Pending</td>
+            {% endif %}
+                
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
