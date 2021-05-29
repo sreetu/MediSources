@@ -1,0 +1,24 @@
+/* Contact Form */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e597fc;
+}
+* {box-sizing: border-box;}
+
+.contact{
+  margin: 5% 15% 5% 15%;
+  border-radius: 5px;
+  background-color: #e4a6f7;
+  padding: 20px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}

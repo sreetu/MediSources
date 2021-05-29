@@ -9,3 +9,6 @@ class Consumer(models.Model):
     pincode = models.CharField(max_length=6)
     severity = models.CharField(max_length=50)
     report = models.ImageField()
+
+    def __str__(self):
+        return self.name
