@@ -1,10 +1,13 @@
+from typing import Optional
 from django.db import models
+
 
 # Create your models here.
 class Provider(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10)
-    email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    city = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=200)
     pincode = models.IntegerField(null=True)
     deliver = models.BooleanField(default=True)
@@ -19,4 +22,4 @@ class Resource(models.Model):
     count = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.provider.name + " " + self.type
+        return self.provider.name + " " + self.provider.phone + " " + self.type
