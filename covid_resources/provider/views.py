@@ -15,14 +15,10 @@ def login(request):
     else: 
         return render(request, 'home.html', {'messages': 'Invalid User Details'})
 
-def login(request):
-    name = request.POST['name']
-    dob = request.POST['dob']
-    provider = Provider.objects.get(name=name, dob=dob)
-    if provider:
-        return render(request, 'home.html', {'messages': 'Login Successful'})
-    else: 
-        return render(request, 'home.html', {'messages': 'Invalid User Details'})
+
+def ptable(request):
+    resources = Resource.objects.all()
+    return render(request, 'provider\provider_table.html', {'resources': resources})
 
 def pform(request):
     if request.method == 'POST':

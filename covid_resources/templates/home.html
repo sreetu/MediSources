@@ -4,14 +4,17 @@
 
 {% block bodyblock %}
 <div class="jumbotron text-center row">
-  <div class="col-4">
+  <div class="col-3">
 <a href="{% url 'consumer:cindex' %}" type="button" class="btn btn-primary btn-lg">Consumer</a>
 </div>
-<div class="col-4">
+<div class="col-3">
 <a href="{% url 'provider:pindex' %}" type="button" class="btn btn-primary btn-lg">Provider</a>
 </div>
-<div class="col-4">
-<a href="{% url 'res' %}" type="button" class="btn btn-primary btn-lg">Resources</a>
+<div class="col-3">
+<a href="{% url 'provider:ptable' %}" type="button" class="btn btn-primary btn-lg">Resources</a>
+</div>
+<div class="col-3">
+  <a href="{% url 'consumer:ctable' %}" type="button" class="btn btn-primary btn-lg">Requests</a>
 </div>
 </div>
 
