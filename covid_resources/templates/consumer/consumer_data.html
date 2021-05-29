@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block bodyblock %}
+
+Consumer Name:{{consumer.name}}<br>
+Consumer Contact:{{consumer.phone}}<br>
+Consumer Contact:{{consumer.city}}<br>
+Consumer Contact:{{consumer.severity}}<br>
+
+<table class="table-primary">
+    {% for i in requests %}
+    <tr class="table-primary">
+        <td class="table-primary">{{i.type}}</td>
+        <td class="table-primary">{{i.count}}</td>
+        {% if i.completed %}
+        <td class="table-primary">{{i.completed}}</td>
+        {% else %}
+        <td class="table-primary">Pending</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock bodyblock %}

@@ -96,7 +96,7 @@ input[type=text], select, textarea {
     transform: translate(-50%,-50%);
     width: 400px;
     padding: 4vw;
-    background: pink;
+    background: blue;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgb(0,0, 0, .5);
     border-radius: 10px;
