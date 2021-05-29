@@ -8,4 +8,4 @@ def pform(request):
     return render(request, 'provider\provider_form.html')
 
 def pdata(request):
-    return render(request, 'providerprovider_data.html')
+    return render(request, 'provider\provider_data.html')

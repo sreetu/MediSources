@@ -3,12 +3,10 @@
 
 
 {% block bodyblock %}
-    
 
-    
 <div class="jumbotron text-center">
-<a href="#" type="button" class="btn btn-primary">Provider</a>
-<a href="#" type="button" class="btn btn-primary">Consumer</a>
+<a href="{% url 'login' %}" type="button" class="btn btn-primary">Provider</a>
+<a href="{% url 'login' %}" type="button" class="btn btn-primary">Consumer</a>
 </div>
 
 {% endblock bodyblock %}
