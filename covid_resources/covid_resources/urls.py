@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
+    path('contact/',views.contact,name='contact'),
     path('tnc/', views.tnc,name='tnc'),
     path('',views.index,name='index'),
     path('consumer/', include('consumer.urls')),
