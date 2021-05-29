@@ -16,3 +16,8 @@ def index(request):
 def tnc(request):
     return render(request, 't&c.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
+def res(request):
+    return render(request, 'resources.html')
