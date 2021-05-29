@@ -6,7 +6,7 @@
 /* Contact Form */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e597fc;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -21,7 +21,7 @@ body {
 .contact{
   margin: 5% 15% 5% 15%;
   border-radius: 5px;
-  background-color: #e4a6f7;
+  background-color: #fff;
   padding: 20px;
 }
 
@@ -40,7 +40,7 @@ input[type=text], select, textarea {
 #footer{
   margin-top: 5%;
   margin-bottom: 0px;
-  background-color: #e4a6f7;
+  background-color: #fff;
 }
 
 .fa {
@@ -91,7 +91,7 @@ input[type=text], select, textarea {
     transform: translate(-50%,-50%);
     width: 400px;
     padding: 4vw;
-    background: #700664;
+    background: blue;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgb(0,0, 0, .5);
     border-radius: 10px;
@@ -136,69 +136,6 @@ input[type=text], select, textarea {
 }
 
 .box1 input[type="submit"]{
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: black;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* SignUp */
- .box2{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    margin-top: 300px;
-    transform: translate(-50%,-50%);
-    width: 400px;
-    padding: 40px;
-    background: #700664;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgb(0,0, 0, .5);
-    border-radius: 10px;
-}
-
-.box2 h2{
-    padding: 0;
-    color: #fff;
-    font-size: 3vw;
-    text-align: center;
-}
-
-.box2 .entry{
-    position: relative;
-}
-
-.box2 .entry input{
-    width: 100%;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
-
-.box2 .entry label{
-    position: absolute;
-    top: -30px;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.box2 .entry input:valid ~ label{
-        color: #03a9f4;
-}
-
-.box2 input[type="submit"]{
     background: transparent;
     border: none;
     outline: none;
