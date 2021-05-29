@@ -14,12 +14,9 @@ class Provider(models.Model):
         return self.name
 
 class Resource(models.Model):
-    name = models.CharField(max_length=100)
-    type = models.CharField(max_length=100,default=None,null=True,blank=True)
+    provider = models.ForeignKey('Provider', on_delete=models.CASCADE, null=True, blank=True)
+    type = models.CharField(max_length=100, default='bed')
+    count = models.IntegerField(default=0)
 
     def __str__(self):
-        if self.type:
-            return self.name+" "+self.type
-        else:
-            return self.name
-
+        return self.provider.name + " " + self.type
