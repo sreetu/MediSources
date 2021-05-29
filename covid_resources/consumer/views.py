@@ -4,8 +4,8 @@ from .models import Consumer, Request
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'consumer\index.html')
+def cindex(request):
+    return render(request, 'consumer\cindex.html')
 
 def login(request):
     name = request.POST['name']
@@ -40,6 +40,7 @@ def cform(request):
         return render(request, 'consumer\consumer_form.html')
 
 def cdata(request):
+<<<<<<< HEAD
     requests = Request.objects.all()
     return render(request, 'consumer\consumer_data.html', {'requests': requests})
 
@@ -53,3 +54,6 @@ def createrequest(request):
         return HttpResponse('error')
 
 
+=======
+    return render(request, 'consumer\consumer_data.html')
+>>>>>>> 08434a96f6d312d327bdab17b88856688fdc60b4

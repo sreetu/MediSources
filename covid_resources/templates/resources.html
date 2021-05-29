@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block bodyblock %}
+
+<div class="grid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Beds</h5>
+          <p class="card-text">Available:5</p>
+          <a href="#" class="btn btn-primary">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Oxygen Cylinder</h5>
+          <p class="card-text">Available:5</p>
+          <a href="#" class="btn btn-primary">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="box" align="center">
+  <p>For getting more resources <a href="{% url 'consumer:cindex' %}">Login here</a></p>
+  <p>For providing more resources <a href="{% url 'provider:pindex' %}">register here</a></p>
+</div>
+
+{% endblock bodyblock %}

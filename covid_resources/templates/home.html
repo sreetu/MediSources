@@ -3,6 +3,7 @@
 
 
 {% block bodyblock %}
+<<<<<<< HEAD
     
 {% if messages %}
     {{ message }}
@@ -11,6 +12,19 @@
 <div class="jumbotron text-center">
 <a href="#" type="button" class="btn btn-primary">Provider</a>
 <a href="#" type="button" class="btn btn-primary">Consumer</a>
+=======
+
+<div class="jumbotron text-center row">
+  <div class="col-4">
+<a href="{% url 'consumer:cindex' %}" type="button" class="btn btn-primary btn-lg">Consumer</a>
+</div>
+<div class="col-4">
+<a href="{% url 'provider:pindex' %}" type="button" class="btn btn-primary btn-lg">Provider</a>
+</div>
+<div class="col-4">
+<a href="{% url 'res' %}" type="button" class="btn btn-primary btn-lg">Resources</a>
+</div>
+>>>>>>> 08434a96f6d312d327bdab17b88856688fdc60b4
 </div>
 
 {% endblock bodyblock %}
