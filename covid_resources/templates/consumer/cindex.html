@@ -3,7 +3,7 @@
 
 {% block bodyblock %}
 
-<div class="box1">
+<div class="box1" style="background:pink">
     <h2>Login</h2>
     <form action="" method="POST">
         {% csrf_token %}
@@ -16,7 +16,7 @@
             <input type="date" name="password" placeholder="dd-mm-yyyy" required="">
         </div>
         <input type="submit" value="Submit" href="#"><br><br>
-        <p style="color:white"><em>New User? Click <a href="{% url 'consumer:cform' %}">here</a></em></p>
+        <p style="color:white"><em>New User? <a class="btn btn-dark" href="{% url 'consumer:cform' %}">Click here</a></em></p>
     </form>
 </div>
 
