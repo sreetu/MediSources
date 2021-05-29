@@ -21,16 +21,9 @@ def cindex(request):
     else:
         return render(request, 'consumer\cindex.html')
 
-    
-
-def login(request):
-    name = request.POST['name']
-    dob = request.POST['dob']
-    consumer = Consumer.objects.get(name=name, dob=dob)
-    if consumer:
-        return render(request, 'home.html', {'messages': 'Login Successful'})
-    else: 
-        return render(request, 'home.html', {'messages': 'Invalid User Details'})
+def ctable(request):
+    requests=Request.objects.all()
+    return render(request, 'provider\provider_table.html',{ 'requests':requests})
 
 def cform(request):
     if request.method == 'POST':
