@@ -1,24 +1,31 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}
 
-
 {% block bodyblock %}
-<div class="row g-2">
-    <div class="col-md">
-        <div class="form-floating">
-            <input type="name" class="form-control" id="floatingInputGrid" placeholder="Full Name" value="">
-            <label for="floatingInputGrid">Email address</label>
-        </div>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-floating mb-3">
+        <input type="name" class="form-control" id="name" placeholder="Full Name">
+        <label for="name">Patient's Name *</label>
     </div>
-    <div class="col-md">
-        <div class="form-floating">
-            
-            
-        </div>
+    <div class="form-floating mb-3">
+        <input type="phone" class="form-control" id="phone" placeholder="Contact Number">
+        <label for="phone">Phone *</label>
     </div>
-</div>
-
-
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="dob" placeholder="dd/mm/yyyy">
+        <label for="dob">Date of Birth *</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="address" class="form-control" id="address" placeholder="House number,area,city">
+        <label for="address">Address for pickup</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="pincode" placeholder="pincode">
+        <label for="pincode">Pincode</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <label for="email">Email address</label>
+    </div>
+</form>
 {% endblock bodyblock %}
-=======
->>>>>>> d259f2417bb5ef0b606660140e5ed3aba88491ef
