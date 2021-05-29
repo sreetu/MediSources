@@ -17,6 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = BASE_DIR / 'templates'
 STATIC_DIR = BASE_DIR / 'static'
+MEDIA_DIR = BASE_DIR / 'media'
 
 # TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
@@ -140,3 +141,7 @@ STATICFILES_DIRS=[STATIC_DIR,]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = MEDIA_DIR

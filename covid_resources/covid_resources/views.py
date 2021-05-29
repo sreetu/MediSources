@@ -18,3 +18,6 @@ def tnc(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def res(request):
+    return render(request, 'resources.html')
