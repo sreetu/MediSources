@@ -1,11 +1,27 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from .models import Consumer, Request
+
 # Create your views here.
 
 
 def cindex(request):
-    return render(request, 'consumer\cindex.html')
+    if request.method== 'POST':
+        name = request.POST['username']
+        dob = request.POST['dob']
+        consumer = Consumer.objects.filter(phone=name,dob=dob)
+        if consumer:
+            requests=Request.objects.filter(consumer_id=consumer[0].pk)
+            # request.session['requests']=requests
+            # request.session['user'] = consumer[0]
+            print(requests)
+            return render(request, 'consumer\consumer_data.html', {'consumer': consumer[0],'requests': requests})
+        else:
+            return render(request, 'consumer\cindex.html', {'messages': 'Invalid User Details'})
+    else:
+        return render(request, 'consumer\cindex.html')
+
+    
 
 def login(request):
     name = request.POST['name']
@@ -42,6 +58,16 @@ def cform(request):
 def cdata(request):
     requests = Request.objects.all()
     return render(request, 'consumer\consumer_data.html', {'requests': requests})
+
+def createrequest(request):
+    if request.method == 'POST':
+        consumer = Consumer.objects.get(pk=request.user.id)
+        type = request.POST['type']
+        count = request.POST['count']
+        return HttpResponse('success')
+    else:
+        return HttpResponse('error')
+
 
 def createrequest(request):
     if request.method == 'POST':
