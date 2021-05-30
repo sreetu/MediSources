@@ -12,8 +12,6 @@ def cindex(request):
         consumer = Consumer.objects.filter(phone=name,dob=dob)
         if consumer:
             requests=Request.objects.filter(consumer_id=consumer[0].pk)
-            # request.session['requests']=requests
-            # request.session['user'] = consumer[0]
             print(requests)
             return render(request, 'consumer\consumer_data.html', {'consumer': consumer[0],'requests': requests})
         else:
@@ -23,7 +21,7 @@ def cindex(request):
 
 def ctable(request):
     requests=Request.objects.all()
-    return render(request, 'provider\provider_table.html',{ 'requests':requests})
+    return render(request, 'consumer\consumer_data.html',{ 'requests':requests })
 
 def cform(request):
     if request.method == 'POST':
@@ -61,12 +59,3 @@ def createrequest(request):
     else:
         return HttpResponse('error')
 
-
-def createrequest(request):
-    if request.method == 'POST':
-        consumer = Consumer.objects.get(pk=request.user.id)
-        type = request.POST['type']
-        count = request.POST['count']
-        return HttpResponse('success')
-    else:
-        return HttpResponse('error')
