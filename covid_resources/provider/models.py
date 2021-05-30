@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class Provider(models.Model):
     name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=10, unique=True)
     email = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=200)

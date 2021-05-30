@@ -17,7 +17,7 @@ def login(request):
 
 
 def ptable(request):
-    resources = Resource.objects.all()
+    resources = Resource.objects.order_by('type', 'provider')
     return render(request, 'provider\provider_table.html', {'resources': resources})
 
 def pform(request):
@@ -31,9 +31,9 @@ def pform(request):
         city = request.POST['city']
         deliver = request.POST['deliver']
         if (deliver == "YES"):
-            provider = Provider(name=name, phone=phone, dob=dob, address=address, pincode=pincode, email=email, deliver=True, city=city)
+            provider, created = Provider.objects.get_or_create(name=name, phone=phone, dob=dob, address=address, pincode=pincode, email=email, deliver=True, city=city)
         else:
-            provider = Provider(name=name, phone=phone, dob=dob, address=address, pincode=pincode, email=email, city=city, deliver=False)
+            provider, created = Provider.objects.get_or_create(name=name, phone=phone, dob=dob, address=address, pincode=pincode, email=email, city=city, deliver=False)
         provider.save()
         return render(request, 'home.html')
     else:
