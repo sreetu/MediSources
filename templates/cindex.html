@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+
+
+<div class="box1"  style="background:pink">
+    {% if messages %}
+    <p style="color:white">{{ messages }}</p>
+    {% endif %}
+    <h2>Login</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="entry">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter Phone Number" required="">
+        </div>
+        <div class="entry">
+            <label for="password">Date Of Birth</label>
+            <input type="date" name="dob" placeholder="dd-mm-yyyy" required="">
+        </div>
+        <input type="submit" value="Submit" href="#"><br><br>
+        <p style="color:white"><em>New User? Click <a href="{% url 'consumer:cform' %}" class="btn-outline-success">here</a></em></p>
+    </form>
+</div>
+
+{% endblock bodyblock %}

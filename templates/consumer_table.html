@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block bodyblock %}
+    <table>
+    {% for i in requests %}
+        <tr>
+            <th>Reciever's Contact</th>
+            <th>Resources</th>
+            <th>Number of Resources</th>
+            <th>Date of Complition</th>
+        </tr>
+        <tr>
+            <td>{{i.consumer}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.count}}</td>
+            {% if i.completed %}
+                <td class="table-primary">{{i.completed}}</td>
+            {% else %}
+                <td class="table-primary">Pending</td>
+            {% endif %}
+                
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
+
+{% endblock bodyblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block bodyblock %}
+
+<h1>Provider's Details<h1>
+<br>
+
+<table class="table table-striped table-hover">
+<tr>
+    <th scope="col"><h2>Name<h2></th>
+    <th scope="col"><h2>Contact<h2></th>
+    <th scope="col"><h2>Resources<h2></th>
+    <th scope="col"><h2>Number of Resources<h2></th>
+</tr>
+{% for i in resources %}
+<tr>
+    <td><h2>{{i.provider.name}}<h2></td>
+    <td><h2>{{i.provider.phone}}<h2></td>
+    <td><h2>{{i.type}}<h2></td>
+    <td><h2>{{i.count}}<h2></td>
+
+</tr>
+{% endfor %}
+</table>
+
+{% endblock bodyblock %}

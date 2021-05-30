@@ -13,15 +13,15 @@ def cindex(request):
         if consumer:
             requests=Request.objects.filter(consumer_id=consumer[0].pk)
             print(requests)
-            return render(request, 'consumer\consumer_data.html', {'consumer': consumer[0],'requests': requests})
+            return render(request, 'consumer_data.html', {'consumer': consumer[0],'requests': requests})
         else:
-            return render(request, 'consumer\cindex.html', {'messages': 'Invalid User Details'})
+            return render(request, 'cindex.html', {'messages': 'Invalid User Details'})
     else:
-        return render(request, 'consumer\cindex.html')
+        return render(request, 'cindex.html')
 
 def ctable(request):
     requests=Request.objects.all()
-    return render(request, 'consumer\consumer_data.html',{ 'requests':requests })
+    return render(request, 'consumer_data.html',{ 'requests':requests })
 
 def cform(request):
     if request.method == 'POST':
@@ -42,13 +42,13 @@ def cform(request):
         else:
             consumer.severity = "critical"
         consumer.save()
-        return render(request, 'consumer\consumer_form.html')
+        return render(request, 'consumer_form.html')
     else:
-        return render(request, 'consumer\consumer_form.html')
+        return render(request, 'consumer_form.html')
 
 def cdata(request):
     requests = Request.objects.all()
-    return render(request, 'consumer\consumer_data.html', {'requests': requests})
+    return render(request, 'consumer_data.html', {'requests': requests})
 
 def createrequest(request):
     if request.method == 'POST':

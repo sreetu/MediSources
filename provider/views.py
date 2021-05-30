@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib import messages
 # Create your views here.
 def pindex(request):
-    return render(request, 'provider\pindex.html')
+    return render(request, 'pindex.html')
 
 def login(request):
     name = request.POST['name']
@@ -18,7 +18,7 @@ def login(request):
 
 def ptable(request):
     resources = Resource.objects.order_by('type', 'provider')
-    return render(request, 'provider\provider_table.html', {'resources': resources})
+    return render(request, 'provider_table.html', {'resources': resources})
 
 def pform(request):
     if request.method == 'POST':
@@ -37,11 +37,11 @@ def pform(request):
         provider.save()
         return render(request, 'home.html')
     else:
-        return render(request, 'provider\provider_form.html')
+        return render(request, 'provider_form.html')
 
 def pdata(request):
     providers = Provider.objects.all()
     dict = {}
     for provider in providers:
         dict[provider.name] = Resource.objects.filter(provider_id=provider.pk)
-    return render(request, 'provider\provider_data.html', {'providers': providers, 'dict': dict})
+    return render(request, 'provider_data.html', {'providers': providers, 'dict': dict})
